@@ -1,4 +1,4 @@
-import { Category } from "../model/Category";
+import { Category } from "../model/category";
 import { ICategoryDTO, ICategoryRepository } from "./ICategoryRepository";
 
 

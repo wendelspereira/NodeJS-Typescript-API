@@ -1,4 +1,4 @@
-import { Category } from "../model/Category";
+import { Category } from "../model/category";
 
 interface ICategoryDTO {
     name: string;
