@@ -1,6 +1,7 @@
-import { ICategoryDTO, ICategoryRepository } from "../repository/ICategoryRepository";
+import { ICategoryDTO, ICategoryRepository } from "../../repository/ICategoryRepository"
 
-class CreateCategoryService {
+
+class CreateCategoryUseCase {
     constructor(private categoryRepository: ICategoryRepository){}
     execute({description, name}: ICategoryDTO): void{
         const categoryAlreadyExists = this.categoryRepository.findByName(name)
@@ -11,4 +12,4 @@ class CreateCategoryService {
     }
 }
 
-export { CreateCategoryService }
+export { CreateCategoryUseCase }
