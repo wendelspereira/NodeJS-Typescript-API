@@ -3,7 +3,7 @@ import { ListCategoriesUseCase } from "./ListCategoriesUseCase"
 class ListCategoriesController{
     constructor(private listCategoriesUseCase: ListCategoriesUseCase){}
 
-    handle(request: Request, response: Response): Response {
+    async handle(request: Request, response: Response): Promise<Response> {
         return response.send(this.listCategoriesUseCase.execute())
     }
 }
