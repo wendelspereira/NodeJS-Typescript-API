@@ -1,4 +1,4 @@
-import { IUserRepository} from "../IUserRepository";
+import { IUserRepository } from "../IUserRepository";
 import { ICreateUserDTO } from "../../dtos/ICreateUserDTO";
 import { User } from "../../entities/User";
 import { getRepository } from "typeorm";
@@ -13,20 +13,23 @@ class UserRepository implements IUserRepository {
 
     async create({
         name,
-        userName,
         email,
         driver_license,
         password,
     }: ICreateUserDTO): Promise<void> {
         const user = this.repository.create({
             name,
-            userName,
             email,
             driver_license,
             password,
         });
 
         await this.repository.save(user);
+    }
+
+    async findByEmail(email: string): Promise<User | undefined> {
+        const user = await this.repository.findOne({email})
+        return user
     }
 }
 

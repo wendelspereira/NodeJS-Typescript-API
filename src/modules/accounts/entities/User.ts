@@ -10,9 +10,6 @@ class User {
     name!: string;
 
     @Column()
-    userName!: string;
-
-    @Column()
     password!: string;
 
     @Column()
