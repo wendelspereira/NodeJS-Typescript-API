@@ -10,6 +10,8 @@
         "migrationsDir": "./src/database/migrations"
     },
     "entities": [
-        "./src/modules/cars/entities/*.ts"
+        "./src/modules/cars/entities/*.ts",
+        "./src/modules/accounts/entities/*.ts"
+
      ]
 }

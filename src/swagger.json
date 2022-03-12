@@ -1,11 +1,11 @@
 {
     "openapi": "3.0.0",
     "info": {
-        "title": "RentalX Documentation",
-        "description": "This is an API Rent",
+        "title": "API Documentation",
+        "description": "This is an API",
         "version": "1.0.0",
         "contact": {
-            "email": "dani@rocketseat.com.br"
+            "email": "wendelspereira@outlook.com"
         }
     },
     "paths": {
@@ -34,6 +34,14 @@
                             }
                         }
                     }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    },
+                    "500": {
+                        "description": "Category already exists"
+                    }
                 }
             },
             "get": {
@@ -41,7 +49,7 @@
                 "summary": "List categories",
                 "description": "Create a new category",
                 "responses": {
-                    "200" : {
+                    "200": {
                         "description": "Success",
                         "content": {
                             "application/json": {
@@ -59,6 +67,143 @@
                             }
                         }
                     }
+                }
+            }
+        },
+
+        "/categories/import": {
+            "post": {
+                "tags": ["Category"],
+                "summary": "Upload a new categories",
+                "description": "Upload a new categories",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "file": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    }
+                }
+            }
+        },
+
+        "/specifications": {
+            "post": {
+                "tags": ["Specification"],
+                "summary": "Create a specification",
+                "description": "Create a new specification",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/definitions/Specification"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    },
+                    "500": {
+                        "description": "Specification already exists"
+                    }
+                }
+            },
+            "get": {
+                "tags": ["Specification"],
+                "summary": "List specifications",
+                "description": "List specifications",
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "properties": {
+                                        "name": {
+                                            "type": "string"
+                                        },
+                                        "description": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+
+        "/accounts": {
+            "post": {
+                "tags": ["Account"],
+                "sumary": "Create a new user",
+                "description": "Create a new user",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/definitions/User"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    },
+                    "500": {
+                        "description": "User already exists"
+                    }
+                }
+            }
+        }
+    },
+
+    "definitions": {
+        "Specification": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                }
+            }
+        },
+        "User": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "userName": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "driver_license": {
+                    "type": "string"
                 }
             }
         }

@@ -1,15 +1,14 @@
-import { Request, Response } from "express"
-import { InputCategoryUseCase } from "./inputCategoryUseCase"
-
-
+import { Request, Response } from "express";
+import { InputCategoryUseCase } from "./inputCategoryUseCase";
+import { container } from "tsyringe";
 
 class InputCategoryController {
-    constructor(private inputCategoryUseCase: InputCategoryUseCase){}
-    handle(request: Request, response: Response): Response {
-        const {file} = request
-        this.inputCategoryUseCase.execute(file)
-        return response.send()
+    async handle(request: Request, response: Response): Promise<Response> {
+        const { file } = request;
+        const inputCategoryUseCase = container.resolve(InputCategoryUseCase);
+        await inputCategoryUseCase.execute(file);
+        return response.send();
     }
 }
 
-export {InputCategoryController}
+export { InputCategoryController };
