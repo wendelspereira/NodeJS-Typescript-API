@@ -2,6 +2,7 @@ import { parse } from "csv-parse";
 import fs from "fs";
 import { CategoryRepository } from "../../repository/implementations/CategoryRepository";
 import { inject, injectable } from "tsyringe";
+import { AppError } from './../../../../errors/AppError';
 
 interface IImportCategory {
     name: string;
@@ -19,7 +20,7 @@ class InputCategoryUseCase {
         file: Express.Multer.File | undefined
     ): Promise<IImportCategory[]> {
         if (!file) {
-            throw new Error("Error on load file");
+            throw new AppError("Error on load file");
         }
         return new Promise((resolve, reject) => {
             const stream = fs.createReadStream(file.path);
