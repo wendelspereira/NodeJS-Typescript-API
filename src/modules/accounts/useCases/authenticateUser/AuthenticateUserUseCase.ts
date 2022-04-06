@@ -1,8 +1,8 @@
-import { IUserRepository } from "@modules/accounts/repository/IUserRepository";
+import { IUserRepository } from "@modules/accounts/infra/typeorm/repository/IUserRepository";
 import { compare } from "bcrypt";
 import { sign } from "jsonwebtoken";
 import { inject, injectable } from "tsyringe";
-import { AppError } from '@errors/AppError';
+import { AppError } from '@shared/errors/AppError';
 
 interface IRequest {
     email: string;

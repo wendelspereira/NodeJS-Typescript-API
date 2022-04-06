@@ -1,6 +1,6 @@
 import { inject, injectable } from "tsyringe";
-import { AppError } from "@errors/AppError";
-import { IUserRepository } from "@modules/accounts/repository/IUserRepository";
+import { AppError } from "@shared/errors/AppError";
+import { IUserRepository } from "@modules/accounts/infra/typeorm/repository/IUserRepository";
 import { deleteFile } from "@util/file";
 
 interface IRequest {

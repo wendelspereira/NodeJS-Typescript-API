@@ -1,6 +1,6 @@
 import { inject, injectable } from "tsyringe";
-import { AppError } from "@errors/AppError";
-import { SpecificationRepository } from "@modules/cars/repository/implementations/SpecificationRepository";
+import { AppError } from "@shared/errors/AppError";
+import { SpecificationRepository } from "@modules/cars/infra/typeorm/repository/SpecificationRepository";
 import { ISpecificationDTO } from "@modules/cars/repository/ISpecificationRepository";
 
 @injectable()

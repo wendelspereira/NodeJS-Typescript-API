@@ -1,10 +1,10 @@
 import express from "express";
 const routes = express();
 
-import { categoriesRoutes } from "./routers/categories.routes";
-import { specificationsRoutes } from "./routers/specifications.routes";
-import { userRoutes } from "./routers/user.routes";
-import { authenticateRoutes } from './routers/authenticate.routes'
+import { categoriesRoutes } from "./shared/infra/http/routers/categories.routes";
+import { specificationsRoutes } from "./shared/infra/http/routers/specifications.routes";
+import { userRoutes } from "./shared/infra/http/routers/user.routes";
+import { authenticateRoutes } from './shared/infra/http/routers/authenticate.routes'
 
 routes.use("/categories", categoriesRoutes);
 routes.use("/specifications", specificationsRoutes);
