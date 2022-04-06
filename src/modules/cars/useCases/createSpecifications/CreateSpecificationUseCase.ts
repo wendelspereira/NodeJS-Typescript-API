@@ -1,7 +1,7 @@
-import { SpecificationRepository } from "../../repository/implementations/SpecificationRepository";
-import { ISpecificationDTO } from "../../repository/ISpecificationRepository";
 import { inject, injectable } from "tsyringe";
-import { AppError } from "../../../../errors/AppError";
+import { AppError } from "@errors/AppError";
+import { SpecificationRepository } from "@modules/cars/repository/implementations/SpecificationRepository";
+import { ISpecificationDTO } from "@modules/cars/repository/ISpecificationRepository";
 
 @injectable()
 class CreateSpecificationUseCase {
