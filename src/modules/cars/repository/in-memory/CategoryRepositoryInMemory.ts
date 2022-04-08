@@ -13,6 +13,7 @@ class CategoryRepositoryInMemory implements ICategoryRepository {
         });
 
         this.categories.push(category);
+
     }
 
     async list(): Promise<Category[]> {
