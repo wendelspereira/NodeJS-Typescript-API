@@ -1,6 +1,6 @@
 import { ICreateCarDTO } from "@modules/cars/dtos/ICreateCarDTO";
 import { Car } from "@modules/cars/infra/typeorm/entities/Car";
-import { ICarRepository } from "@modules/cars/repository/in-memory/ICarRepository";
+import { ICarRepository } from "@modules/cars/repository/ICarRepository";
 import { AppError } from "@shared/errors/AppError";
 import { injectable } from "tsyringe";
 import { inject } from "tsyringe";
