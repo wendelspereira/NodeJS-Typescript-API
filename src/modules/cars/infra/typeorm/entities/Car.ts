@@ -2,7 +2,7 @@ import { v4 as uuidv4 } from "uuid";
 import { CreateDateColumn, Entity, JoinColumn, ManyToMany } from "typeorm";
 import { PrimaryColumn } from "typeorm";
 import { Column } from "typeorm";
-import { Category } from "@modules/cars/infra/typeorm/entities/category";
+import {Category} from "@modules/cars/infra/typeorm/entities/category";
 
 @Entity("cars")
 class Car {
@@ -30,9 +30,9 @@ class Car {
     @Column()
     brand!: string;
 
-    @ManyToMany(() => Category)
-    @JoinColumn({ name: "category_id" })
-    category!: Category;
+    // @ManyToMany("Category")
+    // @JoinColumn({ name: "category_id" })
+    // category!: Category;
 
     @Column()
     category_id!: string;

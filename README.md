@@ -38,3 +38,18 @@ Deve ser possível cadastrar um aluguel
 O aluguel deve ter duração mínima de 24 horas
 Não deve ser possível cadastrar um novo aluguel caso já exista um para o mesmo usuário
 Não deve ser possível cadastrar um novo aluguel caso já exista um para o mesmo carro
+
+
+
+# Sinal Automático
+
+
+**Requisitos funcionais**
+Deve ser possível agendar todos os alarmes de horários
+Dever ser possível configurar tempos e 
+
+
+
+CIRCUITO DE ATIVAÇÃO => SONOFF
+INTERFACE DE CONFIGURAÇÃO => APP MOBO
+
