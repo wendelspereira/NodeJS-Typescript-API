@@ -17,3 +17,4 @@ export class AlterUserDeletecolumnName1647098151555
         );
     }
 }
+

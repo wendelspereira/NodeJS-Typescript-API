@@ -7,6 +7,7 @@ import swaggerFile from "../../../swagger.json";
 import createConnection from "@shared/infra/typeorm";
 import "../../container";
 import { AppError } from "@shared/errors/AppError";
+
 createConnection();
 const app = express();
 

@@ -47,3 +47,13 @@ export class Users1647019724665 implements MigrationInterface {
         await queryRunner.dropTable("users");
     }
 }
+
+
+Convidado
+00000000
+
+Iot
+Lo78g67@
+
+Home
+Deus2022 
