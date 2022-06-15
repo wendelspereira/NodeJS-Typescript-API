@@ -19,6 +19,7 @@ class CarRepository implements ICarRepository {
     async create(data: ICreateCarDTO): Promise<Car> {
         const car = this.repository.create({ ...data });
         await this.repository.save(car);
+        console.log('meiisdfjlsagha')
         return car;
     }
 

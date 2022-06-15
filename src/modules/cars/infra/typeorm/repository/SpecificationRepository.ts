@@ -3,8 +3,9 @@ import {getRepository, Repository} from "typeorm"
 import { ISpecificationDTO, ISpecificationRepository } from "@modules/cars/repository/ISpecificationRepository";
 
 class SpecificationRepository implements ISpecificationRepository {
+    
     private repository: Repository<Specification>;
-
+    
     constructor() {
         this.repository = getRepository(Specification);
     }
