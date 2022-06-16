@@ -1,4 +1,3 @@
-import { Specification } from "@modules/cars/infra/typeorm/entities/Specification";
 import { ICarRepository } from "@modules/cars/repository/ICarRepository";
 import { ISpecificationRepository } from "@modules/cars/repository/ISpecificationRepository";
 import { AppError } from "@shared/errors/AppError";
@@ -22,7 +21,6 @@ class CreateCarSpecificationsUseCase {
 
     async execute({ car_id, specifications_id }: IRequest): Promise<Car> {
         const car = await this.carRepository.findById(car_id);
-
         if (!car) {
             throw new AppError("Cars does't exists!");
         }
@@ -31,11 +29,9 @@ class CreateCarSpecificationsUseCase {
             specifications_id
         );
 
-        car.specifications = specifications as Specification[];
-
+        car.specifications = specifications;
         
         await this.carRepository.create(car);
-        console.log(car)
 
         return car;
     }
