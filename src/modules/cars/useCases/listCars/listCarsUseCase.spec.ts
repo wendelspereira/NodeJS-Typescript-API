@@ -15,7 +15,7 @@ describe("List cars", () => {
             daily_rate: 150,
             license_plate: "43aaf688-3f87-446c-b236-7e0917678276",
             fine_amount: 100,
-            brand: "Toyota",
+            brand: "Tosyota",
         });
 
         const cars = await carsRepositoryInMemory.findAvailable();

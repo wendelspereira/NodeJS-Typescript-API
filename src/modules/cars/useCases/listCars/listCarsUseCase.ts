@@ -16,6 +16,8 @@ class ListCarsUseCase {
 
 
     async execute({category_id, name, brand}: IRequest) {
+        
+
         const cars = await this.carRepository.findAvailable({category_id, name, brand});
         return cars;
     }

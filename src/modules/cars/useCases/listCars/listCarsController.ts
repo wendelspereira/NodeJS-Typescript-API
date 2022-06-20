@@ -10,9 +10,9 @@ interface IRequest {
 
 class ListCarsController {
     async handle(request: Request, response: Response): Promise<Response> {
-        const query: IRequest = request.query
+        const {name, brand, category_id}: IRequest = request.query
         const listCarsUseCase = container.resolve(ListCarsUseCase);
-        const cars = await listCarsUseCase.execute(query);
+        const cars = await listCarsUseCase.execute({name, brand, category_id});
         return response.send(cars);
     }
 }
